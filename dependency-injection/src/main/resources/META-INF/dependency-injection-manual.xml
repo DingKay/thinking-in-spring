@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--manual injection-->
+    <!--constructor-->
+    <bean name="person#constructor" class="com.dk.geek.domain.Person">
+        <constructor-arg name="name" value="dk-constructor"/>
+        <constructor-arg name="age" value="21"/>
+        <constructor-arg name="label" value="worker,user,student"/>
+    </bean>
+
+    <!--setter-->
+    <bean name="person#setter" class="com.dk.geek.domain.Person">
+        <property name="age" value="22"/>
+        <property name="label" value="teacher,walkers"/>
+        <property name="name" value="dk-setter"/>
+    </bean>
+
+    <!--field/method injection by @autowired-->
+
+</beans>

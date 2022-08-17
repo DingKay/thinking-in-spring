@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="ipBean-by-static-method" class="com.dk.geek.domain.IPBean" factory-method="getIPBean"/>
+
+    <bean name="person-by-instance-method" factory-bean="personFactory" factory-method="getPerson"/>
+
+    <bean name="personFactory" class="com.dk.geek.factory.DefaultPersonBeanFactory"/>
+
+    <bean name="user-by-beanFactory" class="com.dk.geek.factory.DefaultUserBeanFactory"/>
+
+</beans>
