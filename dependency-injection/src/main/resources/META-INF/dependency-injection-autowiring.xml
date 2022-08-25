@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="autowiring#byName" class="com.dk.geek.repository.DependencyInjectionByAutowiringRepo"
+          autowire="byName"/>
+
+    <bean name="autowiring#byType" class="com.dk.geek.repository.DependencyInjectionByAutowiringRepo"
+          autowire="byType"/>
+
+    <!--setter-->
+    <bean name="person" class="com.dk.geek.domain.Person">
+        <property name="age" value="22"/>
+        <property name="label" value="teacher,walkers"/>
+        <property name="name" value="dk-setter"/>
+    </bean>
+
+    <bean name="commonUser" class="com.dk.geek.domain.CommonUser">
+        <property name="name" value="dk-commonUser"/>
+    </bean>
+
+</beans>
