@@ -1,9 +1,8 @@
 package com.dk.geek;
 
 import com.dk.geek.config.DependencyInjectionByManualAnnotationConfigure;
-import com.dk.geek.domain.CommonUser;
-import com.dk.geek.domain.Person;
 import com.dk.geek.repository.DependencyInjectionByManualAnnotationRepo;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -15,7 +14,9 @@ public class DependencyInjectionByManualAnnotationDemo {
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(DependencyInjectionByManualAnnotationConfigure.class,
                         DependencyInjectionByManualAnnotationRepo.class);
-        context.getBeanProvider(Person.class).stream().forEach(System.out::println);
-        context.getBeanProvider(CommonUser.class).stream().forEach(System.out::println);
+
+        ObjectProvider<DependencyInjectionByManualAnnotationRepo> beanProvider = context.getBeanProvider(DependencyInjectionByManualAnnotationRepo.class);
+        DependencyInjectionByManualAnnotationRepo object = beanProvider.getObject();
+        System.out.println("object = " + object);
     }
 }

@@ -38,4 +38,13 @@ public class DependencyInjectionByManualAnnotationRepo {
         log.debug("setPerson # injection by method");
         this.person = person;
     }
+
+
+    @Override
+    public String toString() {
+        return "DependencyInjectionByManualAnnotationRepo{" +
+                "commonUser=" + commonUser +
+                ", person=" + person +
+                '}';
+    }
 }
