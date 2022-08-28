@@ -5,7 +5,7 @@
 <configuration status="ERROR" monitorInterval="30">
     <Properties>
         <!--自定义一些常量，之后使用${变量名}引用-->
-        <Property name="logFileName">dependency-injection</Property>
+        <Property name="logFileName">${sys:server-name:-thinking-in-spring}</Property>
     </Properties>
     <!--appenders:定义输出内容,输出格式,输出方式,日志保存策略等,常用其下三种标签[console,File,RollingFile]-->
     <appenders>
@@ -16,7 +16,7 @@
         </console>
         <RollingFile name="RollingFileInfo" fileName="logs/${logFileName}.log"
                      filePattern="${sys:user.home}/logs/$${date:yyyy-MM}/ -%d{yyyy-MM-dd}-%i.log">
-            <PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %c{.} - %m%n"/>
+            <PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %c - %m%n"/>
             <!-- Policies :日志滚动策略-->
             <Policies>
                 <!-- TimeBasedTriggeringPolicy :时间滚动策略,默认0点小时产生新的文件,interval="6" : 自定义文件滚动时间间隔,每隔6小时产生新文件, modulate="true" : 产生文件是否以0点偏移时间,即6点,12点,18点,0点-->

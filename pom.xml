@@ -13,6 +13,8 @@
         <module>spring-in-bean</module>
         <module>spring-lookup</module>
         <module>dependency-injection</module>
+        <module>dependency-source</module>
+        <module>config</module>
     </modules>
 
     <properties>
