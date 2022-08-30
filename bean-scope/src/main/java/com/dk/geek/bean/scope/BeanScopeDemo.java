@@ -1,6 +1,6 @@
 package com.dk.geek.bean.scope;
 
-import com.dk.geek.bean.domai.User;
+import com.dk.geek.bean.domain.User;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.annotation.Autowired;

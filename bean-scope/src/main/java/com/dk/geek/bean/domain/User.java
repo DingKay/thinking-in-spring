@@ -1,4 +1,4 @@
-package com.dk.geek.bean.domai;
+package com.dk.geek.bean.domain;
 
 import lombok.Getter;
 import lombok.Setter;
