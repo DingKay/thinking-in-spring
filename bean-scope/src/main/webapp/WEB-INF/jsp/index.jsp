@@ -1,4 +1,3 @@
-<jsp:useBean id="user" scope="request" type="com.dk.geek.bean.domain.User"/>
 <%--
   Created by IntelliJ IDEA.
   User: dkay
@@ -12,8 +11,16 @@
     <title>Index</title>
 </head>
 <body>
- \${user.name} : ${user.name}
- \${user.age} : ${user.age}
- \${user.timestamp} : ${user.timestamp}
+\${requestUser.name} : ${requestUser.name}
+\${requestUser.age} : ${requestUser.age}
+\${requestUser.timestamp} : ${requestUser.timestamp}
+
+ \${sessionUser.name} : ${sessionUser.name}
+ \${sessionUser.age} : ${sessionUser.age}
+ \${sessionUser.timestamp} : ${sessionUser.timestamp}
+
+\${servletContextUser.name} : ${applicationScope['scopedTarget.servletContextUser'].name}
+\${servletContextUser.age} : ${applicationScope['scopedTarget.servletContextUser'].age}
+\${servletContextUser.timestamp} : ${applicationScope['scopedTarget.servletContextUser'].timestamp}
 </body>
 </html>
