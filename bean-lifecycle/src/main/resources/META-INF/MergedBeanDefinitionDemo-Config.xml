@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="baseUser,parentUser" class="com.dk.geek.lifecycle.domain.User">
+        <property name="age" value="25"/>
+        <property name="name" value="dk"/>
+        <property name="address">
+            <list>
+                <value>Nanjing</value>
+                <value>Shanghai</value>
+                <value>Beijing</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean name="superUser" class="com.dk.geek.lifecycle.domain.SuperUser" parent="baseUser">
+        <property name="job" value="worker"/>
+    </bean>
+
+</beans>
